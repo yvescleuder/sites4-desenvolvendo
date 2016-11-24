@@ -29,28 +29,11 @@ class PostController extends Controller
 	{
 		$dados = $this->input->get("post");
 		
-		$valido = GUMP::is_valid($dados, array(
-    		'titulo' => 'required',
-    		'autor' => 'required'
-		));
-
-		if($valido !== true)
-		{
-		    foreach($valido as $key => $value)
-		    {
-		    	$this->resposta .= $value."<br />";
-		    }
-
-		    return $this->resposta;
-		}
+		if($this->post->inserir($dados))
+			$this->resposta = ["success" => true, "text" => "Post cadastrado com sucesso!"];
 		else
-		{
-			if($this->post->inserir($dados))
-				$this->resposta = ["success" => true, "text" => "Post cadastrado com sucesso!"];
-			else
-				$this->resposta = ["success" => false, "text" => "Erro ao cadastrar o post!"];
-			
-			return $this->resposta;
-		}
+			$this->resposta = ["success" => false, "text" => "Erro ao cadastrar o post!"];
+		
+		return $this->resposta;
 	}
 }

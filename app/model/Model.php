@@ -12,6 +12,7 @@ class Model extends Database
 	 */
 	public function __construct()
 	{
-		$this->open();
+		// Este é um método da classe Pai (Database)
+		$this->abrir();
 	}
 }

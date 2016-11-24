@@ -24,6 +24,6 @@ class Post extends Model
 	public function inserir(Array $dados) : bool
 	{
 		$dados['datahora'] = date('Y-m-d H:i:s');
-		return $this->database->insert('post', $dados);
+		return $this->banco()->insert('post', $dados);
 	}	
 }

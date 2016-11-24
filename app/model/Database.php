@@ -23,7 +23,7 @@ class Database
 	];
 	protected $database;
 
-	public function open()
+	public function abrir()
 	{
 		$this->database = new medoo([
 			'database_type' => 'mysql',
@@ -36,7 +36,10 @@ class Database
 			'prefix' => $this->prefix,
 			'option' => $this->option
 		]);
+	}
 
+	public function banco()
+	{
 		return $this->database;
 	}
 }

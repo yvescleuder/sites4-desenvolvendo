@@ -4,7 +4,7 @@
  * Inclusão da classes externas.
  */
 require_once(__DIR__.'/../lib/Input.php');
-require_once(__DIR__.'/../../vendor/wixel/gump/gump.class.php');
+//require_once(__DIR__.'/../../vendor/wixel/gump/gump.class.php');
 
 class Controller
 {
