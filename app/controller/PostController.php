@@ -30,9 +30,14 @@ class PostController extends Controller
 		$dados = $this->input->get("post");
 		
 		if($this->post->inserir($dados))
-			$this->resposta = ["success" => true, "text" => "Post cadastrado com sucesso!"];
+		{
+			$this->resposta = "Post cadastrado com sucesso!";
+		}
 		else
-			$this->resposta = ["success" => false, "text" => "Erro ao cadastrar o post!"];
+		{
+			http_response_code(422);
+			$this->resposta = "Erro ao cadastrar o post!";
+		}
 		
 		return $this->resposta;
 	}
