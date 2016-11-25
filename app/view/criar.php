@@ -48,18 +48,19 @@
 
     <!-- Page Content -->
     <div class="container">
-        <form action="#" method="POST">
+        <form id="formularioCriarPost" action="#" method="POST">
+            <input type="hidden" name="acao" value="inserirPost">
             <div class="row">
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label for="titulo">Título *</label>
-                        <input id="titulo" type="text" name="titulo" class="form-control" placeholder="Informe o título desse post *">
+                        <input id="titulo" type="text" name="post[titulo]" class="form-control" placeholder="Informe o título desse post *">
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label for="autor">Autor *</label>
-                        <input id="autor" type="text" name="autor" class="form-control" placeholder="Informe o autor desse post *">
+                        <input id="autor" type="text" name="post[autor]" class="form-control" placeholder="Informe o autor desse post *">
                     </div>
                 </div>
             </div>
@@ -67,11 +68,8 @@
                 <div class="col-lg-12">
                     <div class="form-group">
                         <label for="titulo">Categoria *</label>
-                        <select class="form-control" name="categoria">
+                        <select id="categorias" class="form-control" name="post[categoria_id]">
                             <option value="">-- Seleciona uma categoria</option>
-                            <option value="1">Filme</option>
-                            <option value="2">Série</option>
-                            <option value="3">Aventura</option>
                         </select>
                     </div>
                 </div>
@@ -80,11 +78,11 @@
                 <div class="col-lg-12">
                     <div class="form-group">
                         <label for="conteudo">Conteúdo *</label>
-                        <textarea id="conteudo" name="conteudo" class="form-control" placeholder="Qual é o conteudo desse post? *" rows="4"></textarea>
+                        <textarea id="conteudo" name="post[conteudo]" class="form-control" placeholder="Qual é o conteudo desse post? *" rows="4"></textarea>
                     </div>
                 </div>
                 <div class="col-lg-12">
-                    <button type="button" class="btn btn-success">Criar post</button>
+                    <button id="botaoCriarPost" type="button" class="btn btn-success">Criar post</button>
                 </div>
             </div>
             <div class="row">
@@ -112,5 +110,6 @@
     <script src="/assets/js/jquery.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/js/paginas/criar-post.js"></script>
 </body>
 </html>
